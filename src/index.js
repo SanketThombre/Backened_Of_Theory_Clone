@@ -197,9 +197,10 @@ app.use("/review", reviewController);
 
 const start = async (req, res) => {
   await connect();
-  app.listen(5000, () => {
+  app.listen(process.env.PORT || 3001, () => {
     console.log("port..");
   });
 };
 
 start();
+
