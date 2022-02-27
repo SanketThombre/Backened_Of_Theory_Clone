@@ -6,7 +6,7 @@ const User = require("../models/user.model");
 
 const newToken = (user) => {
   // console.log(process.env);
-  return jwt.sign({ user }, process.env.JWT_SECRET_KEY);
+  return jwt.sign({ user }, "masaischool");
 };
 
 //OTP CONGIFFF
