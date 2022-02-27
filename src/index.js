@@ -195,12 +195,20 @@ function getItem(data) {
 const reviewController = require("./controllers/review.controller");
 app.use("/review", reviewController);
 
-const start = async (req, res) => {
-  await connect();
-  app.listen(process.env.PORT || 3001, () => {
-    console.log("port..");
-  });
-};
+// const start = async (req, res) => {
+//   await connect();
+//   app.listen(process.env.PORT || 3001, () => {
+//     console.log("port..");
+//   });
+// };
 
-start();
+// start();
 
+app.listen(process.env.PORT || 3001, '0.0.0.0', async () => {
+  try {
+    await connect();
+    console.log("listning to port 2349");
+  } catch (err) {
+    console.log(err);
+  }
+});
